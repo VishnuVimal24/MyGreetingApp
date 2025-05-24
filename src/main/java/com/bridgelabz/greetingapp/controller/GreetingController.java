@@ -25,6 +25,13 @@ public class GreetingController {
 		public Greeting getGreetingWithFirstName(@RequestParam String firstName) {
 		    return greetingService.addGreeting(firstName, null);
 		}
+		
+		// 🟩 UC3: Return greeting with first name and last name
+		@GetMapping(params = {"firstName", "lastName"})
+		public Greeting getGreetingWithFullName(@RequestParam String firstName,
+		                                        @RequestParam String lastName) {
+		    return greetingService.addGreeting(firstName, lastName);
+		}
 
 	
 }
