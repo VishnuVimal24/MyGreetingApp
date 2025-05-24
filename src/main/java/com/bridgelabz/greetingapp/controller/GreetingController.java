@@ -40,6 +40,13 @@ public class GreetingController {
 		public Optional<Greeting> getGreetingById(@PathVariable Long id) {
 		    return greetingService.getGreetingById(id);
 		}
+		
+		// 🟩 UC7: Update a greeting message by ID
+		@PutMapping("/{id}")
+		public Greeting updateGreeting(@PathVariable Long id,
+		                               @RequestParam String message) {
+		    return greetingService.updateGreeting(id, message);
+		}
 
 	
 }
