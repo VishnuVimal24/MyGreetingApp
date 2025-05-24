@@ -40,6 +40,12 @@ public class GreetingController {
 		public Optional<Greeting> getGreetingById(@PathVariable Long id) {
 		    return greetingService.getGreetingById(id);
 		}
+		
+		// 🟩 UC6: Get all greetings
+		@GetMapping("/all")
+		public List<Greeting> getAllGreetings() {
+		    return greetingService.getAllGreetings();
+		}
 
 	
 }
