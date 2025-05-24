@@ -32,6 +32,14 @@ public class GreetingController {
 		                                        @RequestParam String lastName) {
 		    return greetingService.addGreeting(firstName, lastName);
 		}
+		
+		// 🟩 UC4: Save greeting (handled implicitly in UC1–UC3 via service layer)
+
+		// 🟩 UC5: Get greeting by ID
+		@GetMapping("/{id}")
+		public Optional<Greeting> getGreetingById(@PathVariable Long id) {
+		    return greetingService.getGreetingById(id);
+		}
 
 	
 }
